@@ -1,0 +1,203 @@
+.dark {
+    --bg: hsl(230, 17%, 14%);
+    --bg-top: hsl(232, 19%, 15%);
+    --bg-card: hsl(228, 28%, 20%);
+    --sup-text: hsl(228, 34%, 66%);
+    --main-text: hsl(0, 0%, 100%);
+    --toggle-d: linear-gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    --circle: hsl(230, 17%, 14%);
+    --bg-circle: #ccc;
+    --hover: #333a57;
+}
+
+.light {
+    --bg: hsl(0, 0%, 100%);
+    --bg-top: hsl(225, 100%, 98%);
+    --bg-card: hsl(227, 47%, 96%);
+    --sup-text: hsl(228, 12%, 44%);
+    --main-text: hsl(230, 17%, 14%);
+    --toggle-w: hsl(230, 22%, 74%);
+    --circle: #fff;
+    --bg-circle: #ccc;
+    --hover: #e1e3f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter;
+    color: var(--main-text);
+    background-color: var(--bg) !important;
+    user-select: none;
+    overflow-x: hidden;
+}
+header {
+    line-height: 1.5;
+}
+header .info {
+    margin-bottom: 10px;
+}
+
+header .info h1 {
+    font-size: 27px;
+}
+header .change-mode-container .toggle-mode-container {
+    min-width: 50px;
+    max-width: 55px;
+    height: 23px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 14px;
+    margin-right: 21px;
+    background-color: #ccc;
+}
+
+header .change-mode-container .toggle-mode-container .circle {
+    width: 22px;
+    height: 100%;
+    background-color: var(--circle);
+    border-radius: 50%;
+    transition: 0.3s linear;
+    transform: translateX(25px);
+    margin-left: 4px;
+}
+
+/* card */
+
+.card-container .card {
+    background-color: var(--bg-card);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.card-container .card:not(:nth-child(3)) {
+    border-top: 4px solid;
+}
+
+.card-container .card.facebook {
+    border-color: hsl(208, 92%, 53%);
+}
+.card-container .card.twitter {
+    border-color: hsl(203, 89%, 53%);
+}
+
+.card-container .card.instagram {
+    position: relative;
+    overflow: hidden;
+    border: none;
+}
+
+.card-container .card.instagram::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-image: linear-gradient(to right, #fdc468, #df4996);
+}
+.card-container .card.youtube {
+    border-color: hsl(348, 97%, 39%);
+}
+.card-container .card .card-header {
+    margin: 10px 0 10px 0;
+    font-weight: 700;
+}
+.card-container .card .card-header img {
+    margin: -5px;
+}
+.card-container .card .card-header > span {
+    color: var(--sup-text);
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.card-container .card .card-body {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.card-container .card .card-body span {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--sup-text);
+    font-size: 10px;
+}
+
+.card-container .card .card-footer {
+    text-align: center;
+}
+.card-container .card .card-footer img {
+    margin: 1px;
+}
+
+/* small card  */
+
+.overview .small-card {
+    flex-basis: 200px;
+    background-color: var(--bg-card);
+    padding: 20px 30px;
+    flex-basis: 280px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.overview .small-card .small-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.overview .small-card .small-header span:first-child {
+    color: var(--sup-text);
+}
+
+.overview .small-card .small-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview .small-card .small-body span:first-child {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.overview .small-card .small-body span:last-child {
+    display: inline-block;
+    padding-top: 20px;
+}
+
+footer {
+    padding: 15px;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+    color: var(--main-text);
+}
+/* media query for mobile  */
+@media (max-width: 490px) {
+    header {
+        margin: auto;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+    .card {
+        max-width: 300px;
+        margin: auto;
+    }
+    .small-card {
+        max-width: 230px;
+        margin: auto;
+    }
+}
